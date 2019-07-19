@@ -660,7 +660,7 @@ class SklearnExtension(Extension):
     ) -> Any:
         logging.info('-%s deserialize %s' % ('-' * recursion_depth, flow.name))
         model_name = flow.class_name
-        self._check_dependencies(flow.dependencies)
+        #self._check_dependencies(flow.dependencies)
 
         parameters = flow.parameters
         components = flow.components
