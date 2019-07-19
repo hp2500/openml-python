@@ -7,7 +7,6 @@ A tutorial on how to list and download tasks.
 
 import openml
 import pandas as pd
-from pprint import pprint
 
 ############################################################################
 #
@@ -40,11 +39,11 @@ tasks = openml.tasks.list_tasks(task_type_id=1)
 tasks = pd.DataFrame.from_dict(tasks, orient='index')
 print(tasks.columns)
 print("First 5 of %s tasks:" % len(tasks))
-pprint(tasks.head())
+print(tasks.head())
 
 # The same can be obtained through lesser lines of code
 tasks_df = openml.tasks.list_tasks(task_type_id=1, output_format='dataframe')
-pprint(tasks_df.head())
+print(tasks_df.head())
 
 ############################################################################
 # We can filter the list of tasks to only contain datasets with more than
@@ -78,7 +77,7 @@ print(len(filtered_tasks))
 tasks = openml.tasks.list_tasks(tag='OpenML100')
 tasks = pd.DataFrame.from_dict(tasks, orient='index')
 print("First 5 of %s tasks:" % len(tasks))
-pprint(tasks.head())
+print(tasks.head())
 
 ############################################################################
 # Furthermore, we can list tasks based on the dataset id:
@@ -86,14 +85,14 @@ pprint(tasks.head())
 tasks = openml.tasks.list_tasks(data_id=1471)
 tasks = pd.DataFrame.from_dict(tasks, orient='index')
 print("First 5 of %s tasks:" % len(tasks))
-pprint(tasks.head())
+print(tasks.head())
 
 ############################################################################
 # In addition, a size limit and an offset can be applied both separately and simultaneously:
 
 tasks = openml.tasks.list_tasks(size=10, offset=50)
 tasks = pd.DataFrame.from_dict(tasks, orient='index')
-pprint(tasks)
+print(tasks)
 
 ############################################################################
 #
@@ -134,11 +133,11 @@ task = openml.tasks.get_task(task_id)
 ############################################################################
 # Properties of the task are stored as member variables:
 
-pprint(vars(task))
+print(task)
 
 ############################################################################
 # And:
 
 ids = [2, 1891, 31, 9983]
 tasks = openml.tasks.get_tasks(ids)
-pprint(tasks[0])
+print(tasks[0])
