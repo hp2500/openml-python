@@ -660,7 +660,7 @@ class SklearnExtension(Extension):
     ) -> Any:
         logging.info('-%s deserialize %s' % ('-' * recursion_depth, flow.name))
         model_name = flow.class_name
-        #self._check_dependencies(flow.dependencies)
+        
 
         parameters = flow.parameters
         components = flow.components
@@ -749,9 +749,9 @@ class SklearnExtension(Extension):
             else:
                 raise NotImplementedError(
                     'operation \'%s\' is not supported' % operation)
-            #if not check:
-            #    raise ValueError('Trying to deserialize a model with dependency '
-            #                     '%s not satisfied.' % dependency_string)
+          
+           
+         
 
     def _serialize_type(self, o: Any) -> 'OrderedDict[str, str]':
         mapping = {float: 'float',
