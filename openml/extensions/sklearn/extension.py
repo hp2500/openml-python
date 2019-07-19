@@ -749,9 +749,9 @@ class SklearnExtension(Extension):
             else:
                 raise NotImplementedError(
                     'operation \'%s\' is not supported' % operation)
-            '''if not check:
-                raise ValueError('Trying to deserialize a model with dependency '
-                                 '%s not satisfied.' % dependency_string)'''
+            #if not check:
+            #    raise ValueError('Trying to deserialize a model with dependency '
+            #                     '%s not satisfied.' % dependency_string)
 
     def _serialize_type(self, o: Any) -> 'OrderedDict[str, str]':
         mapping = {float: 'float',
